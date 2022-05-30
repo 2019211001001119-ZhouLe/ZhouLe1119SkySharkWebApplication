@@ -3,55 +3,54 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form id="form1" runat="server">
-        <table>
-            <tr>
-                <td c>
-                    <asp:Label ID="label1" runat="server" Text="Changing password for:"></asp:Label>
+        <div>
+            <table>
+                <tr>
+                    <td>
+                        <asp:Label ID="txtUser" runat="server" Text="Changing Password for:"></asp:Label>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Label ID="Label1" runat="server" Text="Password"></asp:Label>
                 </td>
-                <td>
-                    <asp:TextBox ID="txtUser" runat="server"></asp:TextBox>
+                    <td>
+                        <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
                 </td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>
-                    Password</td>
-                <td>
-                    <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
+                    <td>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtPassword" ErrorMessage="Please specify a valid Username"></asp:RequiredFieldValidator>
                 </td>
-                <td>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtPassword" ErrorMessage="Please spetify a valid password"></asp:RequiredFieldValidator>
+                </tr>
+                <tr>
+                    <td>Confirm Password</td>
+                    <td>
+                        <asp:TextBox ID="txtConPassword" runat="server" TextMode="Password"></asp:TextBox>
                 </td>
-            </tr>
-            <tr>
-                <td>
-                    Confirm Password</td>
-                <td>
-                    <asp:TextBox ID="txtConfPassword" runat="server" TextMode="Password"></asp:TextBox>
+                    <td>
+                        <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="txtPassword" ControlToValidate="txtConPassword" ErrorMessage="The passwords specified by you do not match. Please try again"></asp:CompareValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtConPassword" ErrorMessage="Please specify a valid Password"></asp:RequiredFieldValidator>
                 </td>
-                <td>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtConfPassword" ErrorMessage="Please spetify a valid password"></asp:RequiredFieldValidator>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
                 </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <asp:Button ID="btnSubmit" runat="server" Text="Submit" />
-                </td>
-                <td>
-                    <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="txtConfPassword" ControlToValidate="txtPassword" ErrorMessage="passwords specified by you not match  .Please try again."></asp:CompareValidator>
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
     </form>
 </asp:Content>
